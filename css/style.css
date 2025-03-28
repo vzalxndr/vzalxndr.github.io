@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000000;
+}
+
+.intro-section {
+    background-color: #000000;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.pfp-bg {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    object-fit: cover; 
+    z-index: 1; 
+    user-select: none;
+}
+
+.container {
+    width: 90vw;
+    position: relative;
+    z-index: 1; 
+}
+
+.intro-text {
+    display: inline-block;
+    margin: 0 auto;
+    background-color: #ffffff;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
+    padding: 7px;
+    user-select: none;
+}
+
+.cursor-quote-type {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    color: #ffffff
+}
+
