@@ -1,34 +1,47 @@
 //***************ELEMENTS****************//
 const $quoteText 	= document.querySelector('#intro-text');
 const $quoteAuthor 	= document.querySelector('#intro-author');
+const $menuBtn     = document.querySelector('.menu-btn');
 
 //***************VARIABLES***************//
-let quote 			= '> vzalxndr --20 "human"';
-let author 			= '';
-let text 			= '';
-let firstTaskFlag	= false;
-let speed           = 130;
+let speed = 130;
 
-//************GETTING DATA****************//
+//**************TYPING EFFECT FUNCTION**************//
+function typeText({textToType, cursorClass, $textElement, iteration = 0, callback}) {
+  const text = textToType.slice(0, iteration);
+  $textElement.innerHTML = text + `<span class="${cursorClass}">|</span>`;
 
-typeText(quote, 'cursor-quote-type', $quoteText, 0);
+  if (iteration < textToType.length) {
+    setTimeout(function () {
+      typeText({textToType, cursorClass, $textElement, iteration: iteration + 1, callback});
+    }, Math.random() * speed);  // Random speed per letter
+  } else {
+    // Remove cursor and trigger the callback (to run further actions like showing author)
+    $textElement.innerHTML = text;
+    if (callback) callback();
+  }
+}
 
+//************START THE TYPING EFFECT************//
+function startTyping() {
+  const quote = '> vzalxndr --20 "human"';
+  const author = ''; 
 
-//********TYPING EFFECT FUNCTION*********//
-function typeText(textToType, cursorClass, $textElement, iteration) {
-	text = textToType.slice(0, iteration);
-	$textElement.innerHTML = text + '<span class="' + cursorClass + '">|</span>';
-	(iteration++ <= textToType.length) ? setTimeout(function () 
-			{typeText(textToType, cursorClass, $textElement, iteration)}, 
-				(Math.floor(Math.random() * Math.floor(speed)))) :
-	 	 			newTypeTasks($textElement, text)
-};
+  typeText({
+    textToType: quote,
+    cursorClass: 'cursor-quote-type',
+    $textElement: $quoteText,
+    callback: function() {
+	$menuBtn.classList.add('visible'); 
+      if (author) {
+        typeText({
+          textToType: author,
+          cursorClass: 'cursor-author-type',
+          $textElement: $quoteAuthor
+        });
+      }
+    }
+  });
+}
 
-//****REMOVE CURSOR & ADD NEW TASKS****//
-function newTypeTasks($textElement, text) {
-	$textElement.innerHTML = text;
-	if (!firstTaskFlag) {
-		// typeText(author, 'cursor-author-type', $quoteAuthor, 0);
-		firstTaskFlag = true;
-	}
-};
+document.addEventListener('DOMContentLoaded', startTyping);
