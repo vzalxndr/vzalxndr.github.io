@@ -56,3 +56,26 @@ body {
     color: #ffffff
 }
 
+@media screen and (max-width: 700px) {
+   .intro-text {
+        font-size: 15px;
+   }
+
+   .pfp-bg {
+        width: 300px;
+        height: 300px;
+   }
+}
+
+@media screen and (max-width: 420px) {
+    .intro-text {
+         font-size: 11px;
+    }
+ 
+    .pfp-bg {
+         width: 250px;
+         height: 250px;
+    }
+ }
+
+
