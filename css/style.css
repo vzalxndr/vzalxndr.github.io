@@ -69,7 +69,7 @@ body {
     outline: none;
     border: 3px #ffffff solid;
     background-color: #ffffff;
-    bottom: 10vh;
+    bottom: -10vh;
     transition: bottom 0.5s ease-in-out;
     opacity: 0;
     font-size: 17px;
