@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>vzenroom - space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="css/lightControl.css">
+  <link rel="stylesheet" href="css/mainUI.css">
+  <link rel="stylesheet" href="css/settings.css">
+  <script defer src="js/lightControl.js"></script>
+  <script defer src="js/mainUI.js"></script>
+  <script defer src="js/settings.js"></script>
+</head>
+<body>
+  <div class="main-section">
+    <div id="light-control-section" class="section light-control-section">
+      <h2 class="section-title">Lighting</h2>
+      <div class="light-control-source-1">
+        <h3 class="subsection-title">Source - 1</h2>
+        <div class="color-input-wrapper">
+          <label class="light-color-input-label" for="color">Color:</label>
+          <input class="light-color-input" type="color" id="color" value="#ffffff">
+        </div>
+        <label for="brightness">Brightness:</label>
+        <input class="light-brightness-input" type="range" id="brightness" min="10" max="255" value="100">  
+        <label>
+          <input class="adaptive-light-input" type="checkbox" id="adaptive"> Adaptive Brightness
+        </label>
+  
+        <label class="light-mode-input-label">Mode:</label>
+        <div class="modes">
+          <button onclick="setMode('static')">Static</button>
+          <button onclick="setMode('blink')">Blink</button>
+          <button onclick="setMode('fade')">Fade</button>
+          <button onclick="setMode('rainbow')">Rainbow</button>
+        </div> 
+      </div> 
+      <div class="light-alarm">
+        <h3 class="subsection-title light-alarm-title">Wake Alarm</h3>
+    
+        <div class="time-input-wrapper">
+          <label for="wakeTime">Time:</label>
+          <input class="light-alarm-time-input" type="time" id="wakeTime" value="07:30">
+        </div>
+        
+        <button class="alarm-button" onclick="checkWakeThenSend(setWake)">Set Wake Alarm</button>
+        <button class="alarm-button" onclick="disableWake()">Disable Wake Alarm</button>
+      </div>
+    </div>
+  
+  
+    <div class="section settings-section" id="settings-section" style="display: none;">
+      <h2 class="section-title">Settings</h2>
+      <div class="ip-config">
+        <label class="ip-input-label" for="ip">ESP32 IP Address:</label>
+        <input class="ip-input" type="text" id="ip" placeholder="e.g., 192.168.0.142">
+      </div>
+    </div>
+
+    <div class="fullscreen-menu" id="fullscreen-menu">
+      <ul class="menu-list">
+          <li class="menu-item"><a href="#light-control-section">Lighting</a></li>
+          <li class="menu-item"><a href="#settings-section">Settings</a></li>
+      </ul>
+      <button class="menu-btn" id="menu-btn"></button>
+    </div>
+  </div>
+</body>
+</html>

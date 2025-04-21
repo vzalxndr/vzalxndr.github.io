@@ -1,0 +1,218 @@
+body { 
+    background: #212327; 
+    padding: 20px; 
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.light-control-section {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90vw;
+}
+
+.section-title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+}
+
+.subsection-title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    color: #ffffff;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 0;
+}
+
+input, button, select {
+    margin: 5px 0;
+    padding: 8px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.light-brightness-input {
+    width: 90vw;
+    display: block;
+}
+
+.light-color-input-label {
+    display: block;
+}
+
+.color-input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.light-color-input {
+    width: 70px;
+    height: 40px;
+    outline: none;
+    border: 1px #fff solid;
+    padding: 0;
+    border-radius: 10px;
+    margin-left: 30px;
+    margin-top: 17px;
+}
+
+.modes button {
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    outline: none;
+    border: 1px #ffffff solid;
+    border-radius: 15px;
+    height: 65px;
+    font-size: 20px;
+    font-weight: 200;
+    transition: .2s all;
+    color: #fff;
+}
+
+.modes button:hover {
+    border-radius: 20px;
+    background-color: #ffffff7e;
+}
+
+.modes button.active {
+    background-color: #ffffff;
+    color: #212327;
+}
+
+.light-brightness-input {
+    background-color: #fff;
+}
+
+.adaptive-light-input {
+    width: 30px;
+    height: 16px;
+} 
+
+.light-mode-input-label {
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.light-alarm-title {
+    margin-top: 30px;
+}
+
+.light-alarm {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90vw;
+}
+
+.light-alarm-time-input {
+    text-align: center;
+    background-color: #ffffff00;
+    text-align: center;
+    color: #ffffff;
+    border: 1px #fff solid;
+    outline: none;
+    border-radius: 15px;
+    height: 60px;
+    font-size: 30px;
+    font-weight: 100;
+    width: 230px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.time-input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.alarm-button {
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    outline: none;
+    border: 1px #ffffff solid;
+    border-radius: 15px;
+    height: 65px;
+    font-size: 20px;
+    font-weight: 200;
+    transition: .2s all;
+    color: #fff;
+}
+
+.alarm-button:hover {
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #212327;
+}
+
+.alarm-button.active {
+    background-color: #ffffff;
+    color: #212327;
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+      overflow: hidden;
+      width: 100%;
+      -webkit-appearance: none;
+      background-color: rgba(79, 72, 36, 0);
+    }
+    
+    input[type='range']::-webkit-slider-runnable-track {
+      height: 15px;
+      -webkit-appearance: none;
+      color: #ffffff;
+      margin-top: -1px;
+    }
+    
+    input[type='range']::-webkit-slider-thumb {
+      width: 15px;
+      -webkit-appearance: none;
+      height: 15px;
+      cursor: ew-resize;
+      background: rgba(255, 255, 255, 0.375);
+      box-shadow: -80px 0 0 80px #ffffff;
+    }
+
+}
+
+input[type="range"]::-moz-range-progress {
+  background-color: #ffffff; 
+}
+input[type="range"]::-moz-range-track {  
+  background-color: #ffffff9a;
+}
+
+input[type="range"]::-ms-fill-lower {
+  background-color: #ffffff; 
+}
+input[type="range"]::-ms-fill-upper {  
+  background-color: #ffffff5a;
+}
