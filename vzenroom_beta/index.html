@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="js/download_csv.js"></script>
+  <script defer src="js/show_plot.js"></script>
+  <script defer src="js/show_analysis.js"></script>
+  <script defer src="js/show_raw_data.js"></script>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/cimate_section.css">
+  <title>vzenroom-beta</title>
+</head>
+
+<body>
+  <div id="csvExportModule">
+    <label>
+      Start date:
+      <input type="date" id="DownloadCSVStartDate" />
+    </label>
+    <label>
+      End date (optional):
+      <input type="date" id="DownloadCSVEndDate" />
+    </label>
+    <button id="downloadCSVBtn">Download CSV</button>
+    <div id="downloadCSVStatusElement" style="margin-top:8px; color: red;"></div>
+  </div>
+
+  <div id="plotModule" style="margin-top:20px;">
+    <label>
+      Start date:
+      <input type="date" id="plotStartDate" />
+    </label>
+    <label>
+      End date (optional):
+      <input type="date" id="plotEndDate" />
+    </label>
+    <label>
+      Type:
+      <select id="plotType">
+        <option value="all" selected>all</option>
+        <option value="humidity">humidity</option>
+        <option value="temperature">temperature</option>
+        <option value="lightness">lightness</option>
+      </select>
+    </label>
+    <label>
+      Color:
+      <input type="color" id="plotColor" value="#ff0000" />
+    </label>
+    <label>
+      <input type="checkbox" id="plotUseDefaultColor" checked />
+      Use default colors
+    </label>
+    <button id="plotShowBtn">Show Plot</button>
+    <div id="plotStatus" style="margin-top:8px; color:red;"></div>
+    <div id="plotContainer" style="margin-top:10px;">
+    </div>
+  </div>
+
+  <div id="analyzeModule" style="margin-top: 2em;">
+    <h2>📊 Climate Analysis</h2>
+    <label>
+      Start date:
+      <input type="date" id="AnalyzeStartDate" />
+    </label>
+    <label>
+      End date (optional):
+      <input type="date" id="AnalyzeEndDate" />
+    </label>
+    <button id="analyzeBtn">Analyze</button>
+    <div id="analyzeStatus" style="margin-top:8px; color: red;"></div>
+    <pre id="analyzeResult" style="margin-top: 10px; background: #f8f8f8; padding: 10px; border-radius: 6px;"></pre>
+  </div>
+
+  <div id="rangeModule" style="margin-top: 2em;">
+    <h2>🧪 Raw JSON Data (Range)</h2>
+    <label>
+      Start date:
+      <input type="date" id="RangeStartDate" />
+    </label>
+    <label>
+      End date (optional):
+      <input type="date" id="RangeEndDate" />
+    </label>
+    <button id="rangeBtn">Fetch Data</button>
+    <div id="rangeStatus" style="margin-top:8px; color: red;"></div>
+    <textarea id="rangeResult" readonly
+      style="width:100%; height:300px; margin-top:10px; font-family: monospace;"></textarea>
+    <button id="copyRangeBtn" style="margin-top: 8px;">📋 Copy to Clipboard</button>
+  </div>
+</body>
+
+</html>
