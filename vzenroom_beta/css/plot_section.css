@@ -1,0 +1,176 @@
+#mainPlotSection {
+    width: 1400px;
+    height: 620px;
+}
+
+#plotModule{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid #425059;
+    background-color: #fff;
+    border-radius: 40px;
+    height: 620px;
+}
+
+.plotParamsContainer {
+    width: 510px;
+    height: 620px;
+    border-radius: 37px 0 0 37px;
+    display: flex;
+    padding-top: 60px;
+    padding-right: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #425059;
+}
+
+.plotParamsContainer>h3 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 25px;
+}
+
+.plotParamsContainer>label {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 30px;
+    font-size: 20px;
+    font-weight: 300;
+    color: #ffffff;
+    margin-top: 35px;
+}
+
+.plotParamsContainer>label>input[type=date] {
+    width: 160px;
+    height: 40px;
+    margin-left: 15px;
+    background-color: #fffdfd00;
+    border: 1px solid #ffffff;
+    border-radius: 7px;
+    padding: 10px;
+    font-size: 14px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.plotParamsContainer>label>select {
+    width: 160px;
+    height: 40px;
+    margin-left: 15px;
+    background-color: #fffdfd00;
+    border: 1px solid #ffffff;
+    border-radius: 7px;
+    padding: 10px;
+    font-size: 14px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.plotParamsContainer>label>input[type=color] {
+    width: 160px;
+    height: 40px;
+    margin-left: 15px;
+    background-color: #fffdfd00;
+    border: 1px solid #ffffff;
+    border-radius: 7px;
+    padding: 10px;
+    font-size: 14px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+  
+.switch input {
+    display: none;
+}
+  
+.slider {
+    position: relative;
+    width: 80px;
+    height: 40px;
+    background-color: #cccccc00;
+    border-radius: 40px;
+    transition: background-color 0.3s;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.switch input:checked + .slider {
+    background-color: #ffffff;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(40px);
+    background-color: #425059;
+}
+
+#plotShowBtn {
+    width: 160px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+    color: #1a1816;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    text-transform: uppercase;
+    transition: .2s all;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+#plotShowBtn:hover {
+    border-radius: 15px;
+}
+
+#plotShowBtn:active {
+    border-radius: 17px;
+}
+
+.plotResultContainer {
+    max-height: 560px;
+    max-width: 870px;
+    margin-left: 50px;
+}
+
+#plotContainer {
+    max-height: 530px;
+    max-width: 870px;
+}
+
+#plotContainer>img {
+    max-height: 550px;
+    max-width: 800px;
+}
+
+#plotStatus {
+    width: 8px;
+    text-align: center;
+    margin-top: 40px;
+    font-size:16px;
+    display: none;
+    color: #425059;
+}

@@ -1,0 +1,147 @@
+#mainClimateSection {
+    background: url("../img/main_3.jpg") center center/cover no-repeat;
+    width: 1400px;
+    height: 620px;
+    margin: 0 auto;
+    border: 1px solid #00000000;
+    border-radius: 40px;
+}
+
+#clock {
+    font-size: 90px;
+    color: #ffffff;
+    margin: 45px 0 auto;
+    text-align: center;
+}
+
+#analyzeModule>h2 {
+    font-size: 30px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#analyzeModule>.analysisParamsContainer {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 300;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 45px;
+}
+
+#analyzeModule>.analysisParamsContainer>label {
+    margin-right: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#analyzeModule>.analysisParamsContainer>label>input {
+    width: 160px;
+    height: 40px;
+    margin-left: 15px;
+    background-color: #fffdfd00;
+    border: 1px solid #ffffff;
+    border-radius: 7px;
+    padding: 10px;
+    font-size: 14px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#analyzeBtn {
+    width: 160px;
+    height: 40px;
+    display: block;
+    margin-left: 14px;
+    color: #1a1816;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    text-transform: uppercase;
+    transition: .2s all;
+    cursor: pointer;
+}
+
+#analyzeBtn:hover {
+    border-radius: 15px;
+}
+
+#analyzeBtn:active {
+    border-radius: 17px;
+}
+
+#analyzeResult {
+    background-color: #ffffff00;
+}
+
+#analyzeStatus {
+    display: none;
+    text-align: center;
+    margin-top: 40px;
+    font-size:16px;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+#analyzeResult {
+    width: 90%;
+    margin: 30px auto;
+}
+
+#analyzeResult>h3 {
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 300;
+    margin-top: 40px;
+    margin-bottom: 0px;
+}
+
+#analyzeResult>.analyzeListsContainer>.analyzeBlock>ul>li {
+    color: #ffffff;
+    font-size: 20px;
+    width: 100%;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#analyzeResult>.analyzeListsContainer>.analyzeBlock>ul>li>span {
+    font-weight: 400;
+    text-align: right;
+}
+
+#analyzeResult>.analyzeListsContainer>.analyzeBlock>h4 {
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 600;
+}
+
+#analyzeResult>.analyzeListsContainer>.analyzeBlock {
+    border: 1px solid #ffffff;
+    margin: 0 20px;
+    padding: 8px;
+    border-radius: 10px;
+    width: 280px;
+}
+
+#analyzeResult>.analyzeListsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+#analyzeResult>.analyzeListsContainer>.analyzeBlock>ul {
+    list-style-type: none;
+    margin-top: 10px;
+}

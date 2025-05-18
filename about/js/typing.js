@@ -24,7 +24,7 @@ function typeText({textToType, cursorClass, $textElement, iteration = 0, callbac
 
 //************START THE TYPING EFFECT************//
 function startTyping() {
-  const quote = '> vzalxndr --20 "human"';
+  const quote = '> vzalxndr --21 "human"';
   const author = ''; 
 
   typeText({

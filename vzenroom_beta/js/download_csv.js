@@ -1,23 +1,30 @@
 const btn = document.getElementById('downloadCSVBtn');
 const startInput = document.getElementById('DownloadCSVStartDate');
 const endInput = document.getElementById('DownloadCSVEndDate');
-const statusDiv = document.getElementById('downloadCSVStatusElement');
+const statusDiv = document.getElementById('exportStatus');
 
 btn.addEventListener('click', async () => {
-    statusDiv.style.color = 'red'; //color - negative 
+    statusDiv.style.display = 'none';
     statusDiv.textContent = '';
 
     const start = startInput.value;
     const end = endInput.value;
-    
 
     if (!start) {
+        statusDiv.style.display = 'block';
         statusDiv.textContent = 'Start date is required';
         return;
     }
-    if (end) url += `&end=${encodeURIComponent(end)}`;
+
+    if (end && new Date(start) > new Date(end)) {
+        statusDiv.style.display = 'block';
+        statusDiv.textContent = 'Start date cannot be after end date';
+        return;
+    }
 
     let url = `https://vzenroom-server.fly.dev/export?start=${encodeURIComponent(start)}`;
+    if (end) url += `&end=${encodeURIComponent(end)}`;
+
     try {
         const res = await fetch(url);
 
@@ -42,13 +49,14 @@ btn.addEventListener('click', async () => {
             link.click();
             link.remove();
 
-            statusDiv.style.color = 'green'; //color - positive 
-            statusDiv.textContent = 'Download started';
+            statusDiv.style.display = 'none';
         } else {
             const text = await res.text();
+            statusDiv.style.display = 'block';
             statusDiv.textContent = 'Server response error:\n' + text;
         }
     } catch (err) {
+        statusDiv.style.display = 'block';
         statusDiv.textContent = 'Fetch error: ' + err.message;
     }
 });
